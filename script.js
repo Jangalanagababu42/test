@@ -6,17 +6,17 @@ function onClickHandler(event) {
   var click = event.target.value;
 
 
-  if (click === "h1") {
+  if (click === "red") {
 
-    output.style.fontSize = `${32}px`;
+    output.style.color = "red";
   }
-  else if (click === "h2") {
+  else if (click === "green") {
 
-    output.style.fontSize = `${22}px`
+    output.style.color = "green";
   }
   else {
 
-    output.style.fontSize = `${18}px`
+    output.style.color = "blue";
   }
 }
 
