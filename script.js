@@ -1,26 +1,32 @@
-const heading = document.querySelector('#head1');
-const input = document.querySelectorAll('.btn');
-var size = 32;
+const input = document.querySelector('#inp');
+const button = document.querySelectorAll('.btn');
+const output = document.querySelector('#output');
 
 function onClickHandler(event) {
   var click = event.target.value;
-  console.log(click);
-  if (click === "+") {
-    size += 2;
-    console.log(size);
-    heading.style.fontSize = `${size}px`
 
 
+  if (click === "h1") {
+
+    output.style.fontSize = `${32}px`;
+  }
+  else if (click === "h2") {
+
+    output.style.fontSize = `${22}px`
   }
   else {
-    size -= 2;
-    heading.style.fontSize = `${size}px`
 
+    output.style.fontSize = `${18}px`
   }
 }
 
+function onchangeHandler() {
+  var text = input.value;
+  output.innerText = text;
+}
+input.addEventListener('input', onchangeHandler);
 
-input.forEach(inp => {
-  inp.addEventListener('click', onClickHandler)
+
+button.forEach(btn => {
+  btn.addEventListener('click', onClickHandler)
 })
-
