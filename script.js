@@ -1,8 +1,23 @@
-// const input = document.querySelector('#inp');
-const button = document.querySelectorAll('.btn');
+const input1 = document.querySelector('#inp');
+const button = document.querySelector('#btn');
 const output = document.querySelector('#output');
-
+button.disabled = true;
 function onClickHandler(event) {
+  var inp = input1.value.length;
+  console.log(input1.value);
+  if (inp > 5) {
+    button.disabled = false;
+    output.innerText = "password ok"
+    output.style.color = "green";
+    input1.style.border = "solid green";
+    // button.removeAttribute('disabled');
+  }
+  else {
+    button.disabled = true;
+    output.innerText = "need lengthy password"
+    output.style.color = "red";
+    input1.style.border = "solid red";
+  }
   // var click = event.target.value;
 
 
@@ -18,7 +33,7 @@ function onClickHandler(event) {
 
   //   output.style.color = "blue";
   // }
-  output.style.display = "none";
+  // output.style.display = "none";
 }
 
 // function onchangeHandler() {
@@ -28,6 +43,4 @@ function onClickHandler(event) {
 // input.addEventListener('input', onchangeHandler);
 
 
-button.forEach(btn => {
-  btn.addEventListener('click', onClickHandler)
-})
+input1.addEventListener('input', onClickHandler)
